@@ -7,12 +7,6 @@ use Getopt::Std;
 use File::Basename;
 use File::Spec;
 
-###MODULE LOAD###
-#module load perl/5.12.3
-#module load ncbi-blast+/2.2.29
-#module load BEDTools/2.17.0
-#module load Python/2.7
-
 sub checkOptions {
     my %opts;
     getopts('h1:2:r:o:n:s:p:', \%opts);
@@ -325,7 +319,7 @@ sub fasta_seq_length {
     #open ( my $q_seq, "<", $seq ) or die "Could not open file '$seq': $!";
     #my @lines = split /\n/, $q_seq;
     my @lines = split /\n/, $seq;
-    my $final_line;
+    my $final_line = "";
     foreach my $line (@lines) {
     #while (my $line = <$q_seq>) {
         chomp($line);
